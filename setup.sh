@@ -17,5 +17,5 @@ create_symlink .tmux.conf
 echo Zsh
 create_symlink .zshrc
 
-
+create_symlink .p10k.zsh
 
