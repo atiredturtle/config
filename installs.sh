@@ -31,6 +31,10 @@ if [[ $(command -v zinit) == "" ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 fi
 
+# Powerlevel10k theme
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+
+
 # Vim
 echo Installing and setting up Vim
 # Vim-Plug (https://github.com/junegunn/vim-plug)
