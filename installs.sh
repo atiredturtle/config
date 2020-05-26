@@ -12,8 +12,9 @@ else
     # brew epdate
 fi
 
-# Tmux
 brew install tmux
+brew install yarn
+
 
 # Zsh
 echo Installing zsh packages
@@ -31,7 +32,7 @@ if [[ $(command -v zinit) == "" ]]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
 fi
 
-# Powerlevel10k theme
+# Powerlevel10k theme (https://github.com/romkatv/powerlevel10k)
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
 
@@ -54,3 +55,4 @@ brew cask install iterm2
 echo Installing "nice to have" Apps
 brew cask install spotify
 brew cask install evernote
+brew cask install notion
