@@ -2,6 +2,7 @@
 
 create_symlink() {
     fileName=$1
+    # TODO: add route for forcing if file already exists
     ln -sv ~/config/$fileName ~/$fileName
 }
 
