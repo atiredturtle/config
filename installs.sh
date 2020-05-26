@@ -1,14 +1,52 @@
 #!/bin/sh
+set -x
 
-# Homebrew TODO: add
+# Core CLI
+echo Installing Core CLI Apps
+# Homebrew (https://brew.sh/)
+if [[ $(command -v brew) == "" ]]; then
+    echo "Installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+else
+    echo "Updating Homebrew"
+    # brew epdate
+fi
 
-# Rectangles TODO: add
+# Tmux
+brew install tmux
 
-# Google Chrome
-brew cask install --appdir="/Applications" google-chrome
+# Zsh
+echo Installing zsh packages
+# OhMyZsh (https://github.com/ohmyzsh/ohmyzsh)
+OHMYZSH=~/.oh-my-zsh
+if [[ ! -d $OHMYZSH ]]; then
+    git clone https://github.com/robbyrussell/oh-my-zsh.git $OHMYZSH
+    source $OHMYZSH/oh-my-zsh.sh
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
-# VS Code
-brew cask install --apdir="/Applications" visual-studio-code
+# Zinit(https://github.com/zdharma/zinit) 
+if [[ $(command -v zinit) == "" ]]; then
+    echo installing Zinit
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+fi
 
-# Iterm 2 TODO: add
+# Vim
+echo Installing and setting up Vim
+# Vim-Plug (https://github.com/junegunn/vim-plug)
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# run vim plugins
+vim +PlugInstall +qall
+
+# Visual Apps
+echo Installing Visual Apps
+brew cask install rectangle
+brew cask install google-chrome
+brew cask install visual-studio-code
+brew cask install iterm2
+
+echo Installing "nice to have" Apps
+brew cask install spotify
+brew cask install evernote
