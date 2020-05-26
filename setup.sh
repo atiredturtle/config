@@ -21,3 +21,13 @@ create_symlink .zshrc
 create_symlink .p10k.zsh
 
 create_symlink .vim.zsh # adds vim mode properly to zsh
+
+echo ***Git setup***
+echo What is your Github username?
+read username
+echo What is your Github email?
+read email
+echo Modifying git config
+git config --global user.name $username
+git config --global user.email $email 
+
