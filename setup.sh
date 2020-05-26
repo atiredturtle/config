@@ -11,12 +11,11 @@ echo Vim
 create_symlink .vim
 create_symlink .vimrc
 
-## Tmux TODO
 echo Tmux
 create_symlink .tmux.conf
 
-## ZSH
-# .zshrc TODO
+echo Zsh
+create_symlink .zshrc
 
 
 
