@@ -2,4 +2,3 @@
 *.swo
 */.DS_STORE
 .vim/plugged/*
-.vim/autoload/*
