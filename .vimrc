@@ -3,6 +3,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " vim Intellisense
 
+Plug 'preservim/nerdcommenter'
+
 Plug 'itchyny/lightline.vim' " Cool statusline 
 
 " Plug 'tpope/vim-sensible' " Some sensible defaults  
@@ -95,6 +97,25 @@ command! -bang -nargs=* Ag
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
+
+
+" NerdCommenter settings
+" Adds space after comment
+let g:NERDSpaceDelims = 1
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+
+" Maps ++ to comment toggle
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
 
 " Ale settings
 " let g:ale_open_list = 1
