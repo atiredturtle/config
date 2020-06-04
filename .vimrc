@@ -1,6 +1,8 @@
 " Plugin section
 call plug#begin('~/.vim/plugged')
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " vim Intellisense
+
 Plug 'itchyny/lightline.vim' " Cool statusline 
 
 " Plug 'tpope/vim-sensible' " Some sensible defaults  
@@ -148,6 +150,18 @@ let wiki_1.ext = '.md'
 
 let g:vimwiki_list = [wiki_1] " can add multiple wikis 
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+
+" coc config (Intellisense stuff)
+" full list of coc extensions (lol): https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
+let g:coc_global_extensions = [
+    \ 'coc-snippets',
+    \ 'coc-tsserver',
+    \ 'coc-eslint',
+    \ 'coc-prettier',
+    \ 'coc-json'
+    \ ]
+" Prettier format on save
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Nerd tree shortcut
 function! NerdTreeToggle()
