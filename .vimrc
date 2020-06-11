@@ -5,6 +5,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " vim Intellisense
 
 Plug 'preservim/nerdcommenter'
 
+Plug 'junegunn/rainbow_parentheses.vim' " adds rainbow parens
+
 Plug 'itchyny/lightline.vim' " Cool statusline 
 
 " Plug 'tpope/vim-sensible' " Some sensible defaults  
@@ -71,6 +73,13 @@ set expandtab
 
 let g:gruvbox_contrast_dark = 'hard'
 silent colorscheme gruvbox " Set colorscheme 
+
+" rainbow_parentheses settings
+let g:rainbow#max_level = 16
+" sets the types of parens/brackets to match and color
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']] 
+" Activates rainbow_parentheses (will always turn it on)
+call rainbow_parentheses#activate()
 
 " Modifies lightline
 " Replace filename component of Lightline statusline
