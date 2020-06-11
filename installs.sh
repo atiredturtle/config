@@ -15,6 +15,7 @@ fi
 brew install tmux
 brew install yarn
 brew cask install java
+brew install vim # installs better vim version
 
 # Zsh
 echo Installing zsh packages
