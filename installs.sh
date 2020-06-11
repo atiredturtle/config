@@ -17,6 +17,8 @@ brew install yarn
 brew cask install java
 brew install vim # installs better vim version
 
+brew install the_silver_searcher
+
 # Zsh
 echo Installing zsh packages
 # OhMyZsh (https://github.com/ohmyzsh/ohmyzsh)

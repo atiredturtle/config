@@ -30,7 +30,7 @@ Plug 'sheerun/vim-polyglot' " Language handling
 
 " Plug 'w0rp/ale' " Linter
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 " Initialize plugins
 call plug#end()
