@@ -45,6 +45,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # run vim plugins
 vim +PlugInstall +qall
 
+# extra shell tools
+brew install entr
+
 # Visual Apps
 echo Installing Visual Apps
 brew cask install rectangle
