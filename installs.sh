@@ -14,7 +14,7 @@ fi
 
 brew install tmux
 brew install yarn
-brew cast install java
+brew cask install java
 
 # Zsh
 echo Installing zsh packages
