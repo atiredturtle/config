@@ -1,6 +1,8 @@
 " Plugin section
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-fugitive' " Git tools
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " vim Intellisense
 
 Plug 'preservim/nerdcommenter'
