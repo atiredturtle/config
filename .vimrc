@@ -114,6 +114,9 @@ command! -bang -nargs=* Ag
 " Adds space after comment
 let g:NERDSpaceDelims = 1
 
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
 
@@ -186,12 +189,12 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown'
 " coc config (Intellisense stuff)
 " full list of coc extensions (lol): https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
 let g:coc_global_extensions = [
-    \ 'coc-snippets',
     \ 'coc-tsserver',
     \ 'coc-eslint',
     \ 'coc-prettier',
     \ 'coc-json'
     \ ]
+" \ 'coc-snippets',
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
