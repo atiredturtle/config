@@ -16,7 +16,7 @@ Plug 'christoomey/vim-tmux-navigator'  " Allows for tmux Ctrl-? nav from vim win
 
 Plug 'JamshedVesuna/vim-markdown-preview' " adds a markdown preview window in browser
 
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 Plug 'Quramy/tsuquyomi', { 'do': 'npm -g install typescript' }
 
@@ -177,14 +177,15 @@ let vim_markdown_preview_github=1 " Uses Grip (Github flavoured markdown)
 "" let vim_markdown_preview_toggle=2 " auto render
  
 
-" vimwiki/vimwiki settings
-let wiki_1 = {}
-let wiki_1.path = '~/repos/personal.wiki'
-let wiki_1.syntax = 'markdown'
-let wiki_1.ext = '.md'
-
-let g:vimwiki_list = [wiki_1] " can add multiple wikis 
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" REMOVED VIMWIKI
+" " vimwiki/vimwiki settings
+" let wiki_1 = {}
+" let wiki_1.path = '~/repos/personal.wiki'
+" let wiki_1.syntax = 'markdown'
+" let wiki_1.ext = '.md'
+"
+" let g:vimwiki_list = [wiki_1] " can add multiple wikis
+" let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 
 " coc config (Intellisense stuff)
 " full list of coc extensions (lol): https://github.com/neoclide/coc.nvim/wiki/Using-coc-extensions#implemented-coc-extensions
@@ -192,7 +193,8 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-eslint',
     \ 'coc-prettier',
-    \ 'coc-json'
+    \ 'coc-json',
+    \ 'coc-markdownlint'
     \ ]
 " \ 'coc-snippets',
 
@@ -220,6 +222,15 @@ endfunction
 
 " Prettier format on save
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+ autocmd VimEnter * inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  autocmd VimEnter * inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
 " Nerd tree shortcut
 function! NerdTreeToggle()

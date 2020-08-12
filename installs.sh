@@ -1,4 +1,4 @@
-#!/bin/sh
+#/bin/sh
 set -x
 
 # Core CLI
@@ -50,6 +50,18 @@ vim +PlugInstall +qall
 
 # extra shell tools
 brew install entr
+
+# doom emacs
+brew install emacs
+brew cask install emacs
+brew install ripgrep
+
+# installs doom emacs (TODO: check if it already exists)
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
+# Extra CLI tools
+brew install jq
 
 # Visual Apps
 echo Installing Visual Apps
