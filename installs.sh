@@ -69,6 +69,7 @@ brew cask install rectangle
 brew cask install google-chrome
 brew cask install visual-studio-code
 brew cask install iterm2
+brew cask install haptic-touch-bar
 
 echo Installing "nice to have" Apps
 brew cask install spotify
