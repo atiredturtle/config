@@ -35,6 +35,7 @@ Plug 'sheerun/vim-polyglot' " Language handling
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
 " Initialize plugins
 call plug#end()
 
@@ -149,6 +150,18 @@ noremap <silent> <Leader>cc :TComment<CR>
 " Shortcut to open fzf file fuzzy finder
 let mapleader = " "
 nnoremap <silent> <leader><Space> :GFiles<CR>
+
+" Resize screen faster
+nnoremap <Leader>+ :res +5<CR>
+nnoremap <Leader>- :res -5<CR>
+
+"" FUGITIVE KEY BINDINGS
+" Open git status to bottom
+nnoremap <Leader>gg :below :Git<CR>
+" Get diff of current file
+nnoremap <Leader>gd :Gdiff<CR> 
+"" Commit
+nnoremap <Leader>gc :Gcommit<CR> 
 
 " Cursor shapes on different modes 
 if exists('$TMUX') " for tmux
