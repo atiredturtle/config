@@ -151,6 +151,12 @@ noremap <silent> <Leader>cc :TComment<CR>
 let mapleader = " "
 nnoremap <silent> <leader><Space> :GFiles<CR>
 
+" MY KEY BINDINGS 
+" TODO: move to a different file 
+
+" Open new tab
+nnoremap <Leader>t :tabnew<CR>
+
 " Resize screen faster
 nnoremap <Leader>+ :res +5<CR>
 nnoremap <Leader>- :res -5<CR>
